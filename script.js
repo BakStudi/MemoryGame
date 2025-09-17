@@ -11,7 +11,7 @@ const cards = [
 
 const gameBoard = document.getElementById('game-board');
 
-const allCards = duplicateArray(cards);
+let allCards = duplicateArray(cards);
 /* -------*-------*------- */
 
 
@@ -40,6 +40,17 @@ function duplicateArray (arraySimple) {
     return arrayDouble;
 }
 /* -------*-------*------- */
+
+
+// Fonction mélangeur de cartes dans le tableau "cards"
+function shuffleArray(arrayToShuffle) {
+    const arrayShuffled = arrayToShuffle.sort(() => 0.5 - Math.random());
+    return arrayShuffled;
+}
+/* -------*-------*------- */
+
+
+allCards = shuffleArray(allCards);
 
 
 // Méthode de création des 16 cartes
