@@ -70,8 +70,9 @@ function onCardClick(e) {
     card.classList.add("flip");
 
     selectedCards.push(card);
-    if(selectedCards.length == 2){
-        if(selectedCards[0].dataset.value == selectedCards[1].dataset.value){
+    if(selectedCards.length == 2) {
+        setTimeout(() => {
+            if(selectedCards[0].dataset.value == selectedCards[1].dataset.value){
             //on a trouvé une paire
             selectedCards[0].classList.add("matched");
             selectedCards[1].classList.add("matched");
@@ -84,5 +85,6 @@ function onCardClick(e) {
             selectedCards[1].classList.remove("flip");
         }
         selectedCards = [];
+        }, 1000)
     }
 }
