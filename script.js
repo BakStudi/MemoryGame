@@ -64,7 +64,7 @@ allCards.forEach(card => {
 })
 
 
-// 
+// --------
 function onCardClick(e) {
     const card = e.target.parentElement;
     card.classList.add("flip");
@@ -78,13 +78,19 @@ function onCardClick(e) {
             selectedCards[1].classList.add("matched");
             selectedCards[0].removeEventListener('click', onCardClick);
             selectedCards[1].removeEventListener('click', onCardClick);
-        }
-        else{
+
+            const allCardNotFinded = document.querySelectorAll('.card:not(.matched)');
+            if (allCardNotFinded.length == 0) {
+	            //Le joueur a gagné
+	            alert('Bravo, vous avez gagné');
+            }
+    }
+    else{
             //on s'est trompé
             selectedCards[0].classList.remove("flip");
             selectedCards[1].classList.remove("flip");
-        }
+    }
         selectedCards = [];
-        }, 1000)
+        }, 300)
     }
 }
