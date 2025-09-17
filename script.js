@@ -27,6 +27,8 @@ function createCard(CardUrl) {
 
     card.appendChild(cardContent);
 
+    card.addEventListener('click', onCardClick);
+
     return card;
 }
 /* -------*-------*------- */
@@ -58,3 +60,10 @@ allCards.forEach(card => {
     const cardHtml = createCard(card);
     gameBoard.appendChild(cardHtml);
 })
+
+
+// 
+function onCardClick(e) {
+    const card = e.target.parentElement;
+    card.classList.add("flip");
+}

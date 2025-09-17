@@ -23,3 +23,8 @@ body {
     opacity: 0;
 }
 /* ---- ******************* ---- */
+
+
+.card.flip .card-content {
+    opacity: 1;
+}
