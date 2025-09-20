@@ -17,11 +17,15 @@ body {
     background-color: #ccc;
     border-radius: 5px;
     cursor: pointer;
+    /* Animation */
+    transform: rotateY(0deg);
+    transition: all 0.5s;
 }
 
 .card .card-content {
     opacity: 0;
     max-width: 100%;
+    transition: all 0.3s;
 }
 /* ---- ******************* ---- */
 
@@ -35,4 +39,8 @@ body {
     border: solid 4px rgb(0, 255, 0);
     box-sizing: border-box;
     cursor: default;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
 }
